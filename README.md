@@ -1,0 +1,2 @@
+# Stock_Price_movement_Sentiment_Analysis
+Stock Price Movement prediction using sentiment analysis
