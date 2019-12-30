@@ -2,7 +2,6 @@
 # Code for ARIMA modelling
 
 # set working directory
-setwd(dir = "D:/DA/PGDBA/IIT/BM69006_DATA_SCIENCE_LABORATORY/dsl_project/data/")
 
 # load packages
 library(tseries)
