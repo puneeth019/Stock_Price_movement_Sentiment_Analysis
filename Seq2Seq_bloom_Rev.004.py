@@ -20,7 +20,7 @@ def convertSeriesToMatrix(vectorSeries, sequence_length):
     return matrix
 
 
-df_raw = pd.read_csv('D:/DA/PGDBA/IIT/BM69006_DATA_SCIENCE_LABORATORY/dsl_project/code/final_codes/from_ranadheer/bloom_polarity.csv')
+df_raw = pd.read_csv('bloom_polarity.csv')
 
 
 df_raw = df_raw.iloc[:,1:]
@@ -193,7 +193,7 @@ plt.show()
 
 epochs = 200
 batch_size = 50
-fig.savefig('D:/DA/PGDBA/IIT/BM69006_DATA_SCIENCE_LABORATORY/dsl_project/code/final_codes/from_ranadheer/batch_size_' + 
+fig.savefig('batch_size_' + 
             str(batch_size)+'_epochs_'+ str(epochs)+'_valid_mse'+str('%.4f'%(valid_mse[0]))+'.png', bbox_inches='tight')
 
 
@@ -204,8 +204,6 @@ valid_result[0] = valid_result[0]*ystd + ymean
 valid_result[1] = valid_result[1]*ystd + ymean
 valid_result.columns = ['predicted', 'actual']
 
-
-#valid_result.to_csv('D:/Academic/IIT KGP/DSL/Project/news_stock/sequence to sequence/batch_size_'+str(batch_size)+'_epochs_'+ str(epochs)+'_valid_mse'+str('%.4f'%(valid_mse[0]))+'.csv')
 df = valid_result
 
 df["diff"] = pd.rolling_apply(df['actual'], 2, lambda x: x[0] - x[1])
@@ -224,7 +222,7 @@ plt.ylabel('Close Price')
 plt.show()
 epochs = 400
 batch_size = 50
-fig.savefig('D:/DA/PGDBA/IIT/BM69006_DATA_SCIENCE_LABORATORY/dsl_project/code/final_codes/from_ranadheer/batch_size_' + 
+fig.savefig('batch_size_' + 
             str(batch_size)+'_epochs_'+ str(epochs)+'_valid_mse'+str('%.4f'%(valid_mse[0]))+'.png', bbox_inches='tight')
 
 
@@ -257,14 +255,13 @@ plt.show()
 #fig.savefig('output_close_price_forecasting_100.jpg', bbox_inches='tight')
 epochs = 200
 batch_size = 50
-fig.savefig('D:/DA/PGDBA/IIT/BM69006_DATA_SCIENCE_LABORATORY/dsl_project/code/final_codes/from_ranadheer/batch_size_' + 
+fig.savefig('batch_size_' + 
             str(batch_size)+'_epochs_'+ str(epochs)+'_test_mse'+str('%.4f'%(test_mse[0]))+'.png', bbox_inches = 'tight')
 
 
 
 ## save the result into txt file
 #test_result = np.vstack((np.array(predicted_values).reshape(1,197)[0], y_test.reshape(X1_test.shape[0],))) 
-#np.savetxt('D:/Academic/IIT KGP/DSL/Project/news_stock/sequence to sequence/output_'+str(batch_size)+'_epochs_'+ str(epochs)+'_test_mse'+str('%.4f'%(test_mse[0]))+'.txt', test_result)
 
 #output = pd.DataFrame(predicted_values)
 
@@ -276,7 +273,7 @@ test_result[0] = test_result[0]*ystd + ymean
 test_result[1] = test_result[1]*ystd + ymean
 test_result.columns = ['predicted', 'actual']
 
-test_result.to_csv('D:/DA/PGDBA/IIT/BM69006_DATA_SCIENCE_LABORATORY/dsl_project/code/final_codes/from_ranadheer/batch_size_' + 
+test_result.to_csv('batch_size_' + 
                    str(batch_size)+'_epochs_'+ str(epochs)+'_test_mse'+str('%.4f'%(test_mse[0]))+'.csv')
 df = test_result
 
@@ -299,7 +296,7 @@ plt.ylabel('Close Price')
 plt.show()
 epochs = 400
 batch_size = 50
-fig.savefig('D:/DA/PGDBA/IIT/BM69006_DATA_SCIENCE_LABORATORY/dsl_project/code/final_codes/from_ranadheer/batch_size_' + 
+fig.savefig('batch_size_' + 
             str(batch_size)+'_epochs_'+ str(epochs)+'_valid_mse'+str('%.4f'%(valid_mse[0]))+'.png', bbox_inches='tight')
 
 
